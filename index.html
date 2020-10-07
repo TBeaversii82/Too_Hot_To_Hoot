@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="Contents/bootstrap-grid.min.css" rel="stylesheet" />
+    <link rel="icon" href="Images/favicon-16x16.png" type="image/gif" sizes="16x16">
+
+    <style>
+        .container {
+            padding: 40px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Palindrome Checker</h1>
+
+        <p>Enter your word below</p>
+
+        <form id="myForm">
+            <input id="wordInput" type="text" />
+            <button>Submit</button>
+        </form>
+
+        <br />
+
+        <div id="answer"></div>
+
+    </div>
+
+    <script>
+
+        var myForm = document.getElementById('myForm');
+        var wordInput = document.getElementById('wordInput');
+        var answer = document.getElementById('answer');
+        myForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var userInput = wordInput.value;
+            answer.innerHTML = isPalindrome(userInput);
+        });
+        function isPalindrome(userInput) {
+            for (i = 0; i <= (userInput.length / 2); i++) {
+                if (userInput[i] != userInput[(userInput.length - 1 - i)]) {
+                    return "BOO!!!";
+                }
+            }
+            return "YAY!!!!";
+        }
+    </script>
+
+
+
+    <script src="Scripts/jquery-3.5.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+
+</body>
+</html>
